@@ -25,6 +25,20 @@ public abstract class Sort<T extends Comparable<T>> {
         System.out.println();
     }
 
+    public void print(T[] a, int p1, int p2) {
+        for (int i = 0; i < a.length; i++) {
+            System.out.print(a[i]);
+            if (i == p1) {
+                System.out.print("*");
+            }
+            if (i == p2) {
+                System.out.print("#");
+            }
+            System.out.print("\t");
+        }
+        System.out.println();
+    }
+
     public void printIndex(T[] a) {
         System.out.print(" \t \t \t");
         for (int i = 0; i < a.length; i++) {
