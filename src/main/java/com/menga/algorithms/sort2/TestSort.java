@@ -9,8 +9,8 @@ public class TestSort {
         Integer[] arr = {3, 6, 2, 1, 4, 8, 5};
         TestSort.print(arr);
 
-        Sort<Integer> s = new Insertion<Integer>();
-        s.sort(arr);
+//        Sort<Integer> s = new Insertion<Integer>();
+//        s.sort(arr);
 
 //        TestSort.print(arr);
     }

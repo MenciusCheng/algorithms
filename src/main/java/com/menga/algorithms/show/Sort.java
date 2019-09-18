@@ -5,7 +5,7 @@ package com.menga.algorithms.show;
  */
 public abstract class Sort<T extends Comparable<T>> {
 
-    public abstract void sort(T[] nums);
+    public abstract void sort(T[] arr);
 
     protected boolean less(T v, T w) {
         return v.compareTo(w) < 0;

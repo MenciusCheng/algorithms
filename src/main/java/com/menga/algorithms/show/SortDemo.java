@@ -14,6 +14,18 @@ public class SortDemo {
 //        System.out.println("--------------");
 
         Integer[] a = {5, 11, 7, 9, 2, 3, 12, 8, 6, 1, 4, 10};
-        new Shell<Integer>().sortShow(a);
+//        new Shell<Integer>().sortShow(a);
+
+        print(a);
+        new MergeSort<Integer>().upToDownSort(a);
+        print(a);
+    }
+
+    public static void print(Object[] arr) {
+        for (int i = 0; i < arr.length; i++) {
+            System.out.print(arr[i]);
+            System.out.print("\t");
+        }
+        System.out.println();
     }
 }
