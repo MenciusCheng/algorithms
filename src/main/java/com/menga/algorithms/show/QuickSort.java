@@ -55,4 +55,51 @@ public class QuickSort<T extends Comparable<T>> extends AbstractSort<T> {
 
         return p2;
     }
+
+    /**
+     * 下面方法可打印交换过程
+     * =====================================
+     */
+
+    public void sortShow(T[] arr) {
+        print(arr);
+        shuffle(arr); // 打乱数组
+        print(arr);
+        sortShow(arr, 0, arr.length - 1);
+    }
+
+    private void sortShow(T[] arr, int head, int tail) {
+        if (head >= tail) {
+            return;
+        }
+        int p = partitionShow(arr, head, tail); // 切分
+        sortShow(arr, head, p - 1); // 将左半部分 arr[head..p-1] 排序
+        sortShow(arr, p + 1, tail); // 将右半部分 arr[p+1..tail] 排序
+    }
+
+    /**
+     * 切分
+     */
+    private int partitionShow(T[] arr, int head, int tail) {
+        // 左右扫描指针
+        int p1 = head, p2 = tail + 1;
+        // 切分元素
+        T value = arr[head];
+        while (true) {
+            // 左指针向右扫描，直到遇到大于等于切分元素的元素
+            while (less(arr[++p1], value) && p1 != tail) ;
+            // 右指针向左扫描，直到遇到小于等于切分元素的元素
+            while (less(value, arr[--p2]) && p2 != head) ;
+            if (p1 >= p2) {
+                // 左右指针相遇时，退出主循环
+                break;
+            }
+            swap(arr, p1, p2);
+            print(arr, p1, p2);
+        }
+        swap(arr, head, p2);
+        print(arr, head, p2);
+
+        return p2;
+    }
 }
