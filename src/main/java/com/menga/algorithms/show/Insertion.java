@@ -5,7 +5,7 @@ package com.menga.algorithms.show;
  *
  * Created by Marvel on 2019/8/29.
  */
-public class Insertion<T extends Comparable<T>> extends Sort<T> {
+public class Insertion<T extends Comparable<T>> extends AbstractSort<T> {
 
     @Override
     public void sort(T[] nums) {

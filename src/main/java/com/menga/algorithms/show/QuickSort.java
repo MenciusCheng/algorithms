@@ -9,7 +9,7 @@ import java.util.List;
  *
  * Created by Marvel on 2019/8/29.
  */
-public class QuickSort<T extends Comparable<T>> extends Sort<T> {
+public class QuickSort<T extends Comparable<T>> extends AbstractSort<T> {
 
     @Override
     public void sort(T[] arr) {

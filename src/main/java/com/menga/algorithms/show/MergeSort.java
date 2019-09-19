@@ -3,7 +3,7 @@ package com.menga.algorithms.show;
 /**
  * Created by Marvel on 2019/9/18.
  */
-public class MergeSort<T extends Comparable<T>> extends Sort<T> {
+public class MergeSort<T extends Comparable<T>> extends AbstractSort<T> {
 
     private T[] aux;
 

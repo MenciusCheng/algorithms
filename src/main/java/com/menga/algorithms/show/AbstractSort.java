@@ -3,7 +3,7 @@ package com.menga.algorithms.show;
 /**
  * Created by Marvel on 2019/8/29.
  */
-public abstract class Sort<T extends Comparable<T>> {
+public abstract class AbstractSort<T extends Comparable<T>> {
 
     public abstract void sort(T[] arr);
 
