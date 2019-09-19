@@ -16,10 +16,10 @@ public class SortDemo {
         Integer[] a = {5, 11, 7, 9, 2, 3, 12, 8, 6, 1, 4, 10};
 //        new Shell<Integer>().sortShow(a);
 
-//        print(a);
+        print(a);
 //        new MergeSort<Integer>().upToDownSort(a);
         new QuickSort<Integer>().sort(a);
-//        print(a);
+        print(a);
     }
 
     public static void print(Object[] arr) {
