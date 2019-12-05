@@ -18,7 +18,7 @@ public class MergeSort<T extends Comparable<T>> extends AbstractSort<T> {
      * @param mid 中间下标
      * @param tail 末尾下标
      */
-    public void merge(T[] arr, int head, int mid, int tail) {
+    private void merge(T[] arr, int head, int mid, int tail) {
         int p1 = head; // 指向子数组 arr[head..mid] 的下标
         int p2 = mid + 1; // 指向子数组 arr[mid+1..tail] 的下标
 
@@ -52,7 +52,7 @@ public class MergeSort<T extends Comparable<T>> extends AbstractSort<T> {
         upToDownSort(arr, 0, arr.length - 1);
     }
 
-    public void upToDownSort(T[] arr, int head, int tail) {
+    private void upToDownSort(T[] arr, int head, int tail) {
         if (head >= tail) {
             return;
         }
@@ -61,6 +61,14 @@ public class MergeSort<T extends Comparable<T>> extends AbstractSort<T> {
         upToDownSort(arr, mid + 1, tail); // 将右半边排序
         merge(arr, head, mid, tail); // 归并结果
     }
+
+    // 上面的递归函数是否可以用尾递归优化？
+
+    // 优化算法：
+    // 1. 对于小规模数组，使用插入排序
+    // 2. 判断如果 a[mid] 小于等于 a[mid + 1]，就认为数组是有序的，并跳过 merge 方法。
+
+    // 可以设计一个测试数组排序时间的程序，然后观看优化后的结果
 
     /**
      * 自底向上的归并排序
